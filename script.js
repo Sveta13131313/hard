@@ -18,6 +18,7 @@ console.log('Первая цифра ',res[0]);
 console.log('Вторая цифра ',res[1]);
 */
 
+/*
 //ДЗ 3
 let lang = prompt('Введите язык ru или en?');
 //a
@@ -64,3 +65,19 @@ let namePerson = prompt('Введите имя');
 (namePerson==='Артем')?console.log('Директор'):
 (namePerson==='Максим')?console.log('Преподаватель'):
 console.log('Студент');
+*/
+
+const getString = function(str){
+    if(typeof(str)!='string'){
+        return 'Получена не строка!';
+    }
+    str=str.trim();
+
+    if(str.length > 30) {
+        str = str.substr(0, 30) + '...';
+      }
+      return console.log(str);
+}
+
+let strWords = prompt('Введите строку');
+getString(strWords);
