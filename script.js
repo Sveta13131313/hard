@@ -21,13 +21,13 @@ console.log('Вторая цифра ',res[1]);
 //ДЗ 3
 let lang = prompt('Введите язык ru или en?');
 //a
-if (lang == 'ru') {
-    alert('Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье');
+if (lang === 'ru') {
+    console.log('Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье');
 } else {
-if (lang =='en') {
-    alert('Monday, tuesday, wednesday, thursday, friday, saturday, sunday');
+if (lang ==='en') {
+    console.log('Monday, tuesday, wednesday, thursday, friday, saturday, sunday');
 } else {
-    alert('Вы сделали неправильный ввод, повторите попытку');
+    console.log('Вы сделали неправильный ввод, повторите попытку');
 }
 }
 
@@ -36,13 +36,13 @@ if (lang =='en') {
 let lang1 = prompt('Введите язык ru или en?');
 switch (lang1) {
     case ('ru'):
-        alert('Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье');
+        console.log('Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье');
         break;
     case ('en'):
-        alert('Monday, tuesday, wednesday, thursday, friday, saturday, sunday');
+        console.log('Monday, tuesday, wednesday, thursday, friday, saturday, sunday');
         break;
     default:
-        alert('Вы сделали неправильный ввод, повторите попытку');
+        console.log('Вы сделали неправильный ввод, повторите попытку');
 }
 
 
@@ -53,14 +53,14 @@ let lang2=[
     ['Вы сделали неправильный ввод, повторите попытку']
 ]
 let choose = prompt('Введите язык ru или en?');
-(choose=='ru')?alert(lang2[0]):
-(choose=='en')?alert(lang2[1]):
-alert(lang2[2]);
+(choose==='ru')?console.log(lang2[0]):
+(choose==='en')?console.log(lang2[1]):
+console.log(lang2[2]);
 
 
 //2
 let namePerson = prompt('Введите имя');
 
-(namePerson=='Артем')?console.log('Директор'):
-(namePerson=='Максим')?console.log('Преподаватель'):
+(namePerson==='Артем')?console.log('Директор'):
+(namePerson==='Максим')?console.log('Преподаватель'):
 console.log('Студент');
