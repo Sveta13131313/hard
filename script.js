@@ -66,7 +66,7 @@ let namePerson = prompt('Введите имя');
 (namePerson==='Максим')?console.log('Преподаватель'):
 console.log('Студент');
 */
-
+/*
 const isNumber=function(n){
 return !isNaN(parseFloat(n))&&isFinite(n)
 };
@@ -87,3 +87,32 @@ const getString = function(){
 
 
 getString();
+*/
+
+//Задание 5
+
+//1
+let arr = [];
+for (let count = 0; count < 7; count++) {
+    arr[count] = prompt('Введите многозначное число');
+    if  ((arr[count][0]==2)||(arr[count][0]==4)){
+        console.log(arr[count]);
+    }
+}
+
+
+
+//2
+for (let i = 1; i < 100; i++) {
+    let flag = 1;
+    for (let j = 2; (j <= i / 2) && (flag == 1); j = j + 1) {
+        if (i % j == 0) {
+            flag = 0;
+        }
+    }
+
+    if (flag == 1) {
+        console.log('Делители этого числа: 1  и ', i);
+    }
+}
+
