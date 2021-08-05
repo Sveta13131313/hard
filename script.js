@@ -67,9 +67,15 @@ let namePerson = prompt('Введите имя');
 console.log('Студент');
 */
 
-const getString = function(str){
-    if(typeof(str)!='string'){
-        return 'Получена не строка!';
+const isNumber=function(n){
+return !isNaN(parseFloat(n))&&isFinite(n)
+};
+
+const getString = function(){
+    let str = prompt('Введите строку');
+    while(isNumber(str)){
+        console.log('Получена не строка!');
+        str = prompt('Введите строку');
     }
     str=str.trim();
 
@@ -79,5 +85,5 @@ const getString = function(str){
       return console.log(str);
 }
 
-let strWords = prompt('Введите строку');
-getString(strWords);
+
+getString();
