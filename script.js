@@ -88,7 +88,7 @@ const getString = function(){
 
 getString();
 */
-
+/*
 //Задание 5
 
 //1
@@ -115,4 +115,30 @@ for (let i = 1; i < 100; i++) {
         console.log('Делители этого числа: 1  и ', i);
     }
 }
+
+*/
+//Задание 7
+let week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+let toDay = new Date().getDay() - 1;
+
+
+    for (let i = 0; i < week.length; i++) {
+        if (i === toDay) {
+            if ( week[i] == 'Суббота') {
+                document.write(`<p><b><i>${week[i]}</i></b></p>`);
+            } else {
+                document.write(`<p><b>${week[i]}</b></p>`);
+            }
+        } else if (week[i] == 'Воскресенье') {
+            document.write(`<p><b><i>${week[i]}<i></b></p>`);
+        } else {
+            document.write(`<p>${week[i]}</p>`);
+        }
+    }
+    console.log(week);
+
+
+
+
+
 
