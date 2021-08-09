@@ -117,6 +117,7 @@ for (let i = 1; i < 100; i++) {
 }
 
 */
+/*
 //Задание 7
 let week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
 let toDay = new Date().getDay() - 1;
@@ -136,6 +137,76 @@ let toDay = new Date().getDay() - 1;
         }
     }
     console.log(week);
+
+*/
+
+//Задание 9
+let toDay = new Date();
+let days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+
+let hForA=document.getElementById("hForA");
+let hForB=document.getElementById("hForB");
+
+
+let Month;
+// Преобразуем месяца
+switch (toDay.getMonth()) {
+    case 0: Month = 'января'; break;
+    case 1: Month = 'февраля'; break;
+    case 2: Month = 'марта'; break;
+    case 3: Month = 'апреля'; break;
+    case 4: Month = 'мая'; break;
+    case 5: Month = 'июня'; break;
+    case 6: Month = 'июля'; break;
+    case 7: Month = 'августа'; break;
+    case 8: Month = 'сентября'; break;
+    case 9: Month = 'октября'; break;
+    case 10: Month = 'ноября'; break;
+    case 11: Month = 'декабря'; break;
+}
+
+let a = function () {
+    // Вывод
+    if (toDay.getHours() == 1) {
+        return ('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' час ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+    } else if (toDay.getHours() > 1 && toDay.getHours() < 5) {
+        return ('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часа ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+    }
+    else if (toDay.getHours() > 4 || toDay.getHours() == 0) {
+        return ('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часов ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+    }
+
+}
+
+let b=function(){
+    let hours=toDay.getHours();
+    let munite=toDay.getMinutes();
+    let second=toDay.getSeconds();
+    let day=toDay.getDay();
+    let month=toDay.getMonth();
+
+    if(toDay.getHours()<10){
+        hours='0'+toDay.getHours();
+    }
+    if(toDay.getMinutes()<10){
+        munite='0'+toDay.getMinutes();
+    }
+    if(toDay.getSeconds()<10){
+        second='0'+toDay.getSeconds();
+    }
+    if(toDay.getDay()<10){
+        day='0'+toDay.getDay();
+    }
+    if(toDay.getMonth()<10){
+        month='0'+toDay.getMonth();
+    }
+
+    return (day +  '.' + month + '.' + toDay.getFullYear() + ' - ' +  hours + ':' + munite + ':' + second);
+}
+setInterval(() => { 
+    hForA.innerText=a();
+    hForB.innerText=b();
+}, 1000);
 
 
 
