@@ -168,13 +168,14 @@ switch (toDay.getMonth()) {
 let a = function () {
     let toDay = new Date();
     if (toDay.getHours() == 1) {
-        document.write('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' час ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+        hForA.textContent=('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' час ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
     } else if (toDay.getHours() > 1 && toDay.getHours() < 5) {
-        document.write('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часа ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+        hForA.textContent=('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часа ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
     }
     else if (toDay.getHours() > 4 || toDay.getHours() == 0) {
-        document.write('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часов ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+        hForA.textContent=('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часов ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
     }
+    window.setInterval(a, 1000);
 }
 let b = function () {
     let toDay = new Date();
@@ -200,11 +201,21 @@ let b = function () {
         month = '0' + toDay.getMonth();
     }
 
-    document.write(day + '.' + month + '.' + toDay.getFullYear() + ' - ' + hours + ':' + munite + ':' + second);
+    hForB.textContent=(day + '.' + month + '.' + toDay.getFullYear() + ' - ' + hours + ':' + munite + ':' + second);
+   
+window.setInterval(b, 1000);
 }
 
-setInterval(a, 1000);
-setInterval(b, 1000);
+a();
+b();
+/*
+const tick =function(){
+    setInterval(a, 1000);
+    hForB.textContent=setInterval(b, 1000);
+    }
+    */
+
+
 
 
 
