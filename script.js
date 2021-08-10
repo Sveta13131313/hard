@@ -144,8 +144,8 @@ let toDay = new Date().getDay() - 1;
 let toDay = new Date();
 let days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
 
-let hForA=document.getElementById("hForA");
-let hForB=document.getElementById("hForB");
+let hForA = document.getElementById("hForA");
+let hForB = document.getElementById("hForB");
 
 
 let Month;
@@ -166,49 +166,45 @@ switch (toDay.getMonth()) {
 }
 
 let a = function () {
-    // Вывод
+    let toDay = new Date();
     if (toDay.getHours() == 1) {
-        return ('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' час ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+        document.write('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' час ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
     } else if (toDay.getHours() > 1 && toDay.getHours() < 5) {
-        return ('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часа ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+        document.write('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часа ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
     }
     else if (toDay.getHours() > 4 || toDay.getHours() == 0) {
-        return ('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часов ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+        document.write('Сегодня ' + days[toDay.getDay()] + ', ' + toDay.getDay() + ' ' + Month + ' ' + toDay.getFullYear() + ' года, ' + toDay.getHours() + ' часов ' + toDay.getMinutes() + ' минут ' + toDay.getSeconds() + ' секунды');
+    }
+}
+let b = function () {
+    let toDay = new Date();
+    let hours = toDay.getHours();
+    let munite = toDay.getMinutes();
+    let second = toDay.getSeconds();
+    let day = toDay.getDay();
+    let month = toDay.getMonth();
+
+    if (toDay.getHours() < 10) {
+        hours = '0' + toDay.getHours();
+    }
+    if (toDay.getMinutes() < 10) {
+        munite = '0' + toDay.getMinutes();
+    }
+    if (toDay.getSeconds() < 10) {
+        second = '0' + toDay.getSeconds();
+    }
+    if (toDay.getDay() < 10) {
+        day = '0' + toDay.getDay();
+    }
+    if (toDay.getMonth() < 10) {
+        month = '0' + toDay.getMonth();
     }
 
+    document.write(day + '.' + month + '.' + toDay.getFullYear() + ' - ' + hours + ':' + munite + ':' + second);
 }
 
-let b=function(){
-    let hours=toDay.getHours();
-    let munite=toDay.getMinutes();
-    let second=toDay.getSeconds();
-    let day=toDay.getDay();
-    let month=toDay.getMonth();
-
-    if(toDay.getHours()<10){
-        hours='0'+toDay.getHours();
-    }
-    if(toDay.getMinutes()<10){
-        munite='0'+toDay.getMinutes();
-    }
-    if(toDay.getSeconds()<10){
-        second='0'+toDay.getSeconds();
-    }
-    if(toDay.getDay()<10){
-        day='0'+toDay.getDay();
-    }
-    if(toDay.getMonth()<10){
-        month='0'+toDay.getMonth();
-    }
-
-    return (day +  '.' + month + '.' + toDay.getFullYear() + ' - ' +  hours + ':' + munite + ':' + second);
-}
-setInterval(() => { 
-    hForA.innerText=a();
-    hForB.innerText=b();
-}, 1000);
-
-
+setInterval(a, 1000);
+setInterval(b, 1000);
 
 
 
